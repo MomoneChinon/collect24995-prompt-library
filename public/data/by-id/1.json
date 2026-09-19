@@ -1,0 +1,13 @@
+{
+  "id": 1,
+  "main_status_id": "2101140319920373974",
+  "reply_status_id": "2101140322906759396",
+  "main_url": "https://x.com/collect24995/status/2101140319920373974",
+  "reply_url": "https://x.com/collect24995/status/2101140322906759396",
+  "posted_at": "2026-09-19 10:44 Asia/Shanghai",
+  "captured_at": "2026-09-19T22:07:40.664612+08:00",
+  "selection": "backfill_unused",
+  "raw_prompt": "プロンプト(GPT、任意のAI美女を参照画像に)  3:4縦長、腿、肩、肘窩、デコルテ、廊下、洗濯物が入った籠を両手で持って歩いている、カメラ目線ではない、服の代わりに髪と洗濯籠でデコルテ〜腿が隠れる、SFW ネガティブ: トップス",
+  "expression_override": null,
+  "note": "seed from crawler preview; not yet used for image gen"
+}

@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "source": "@collect24995",
+    "id_range": "0-9999",
+    "count": 2,
+    "updated_at": "2026-09-19T22:07:40.664645+08:00"
+  },
+  "prompts": [
+    {
+      "id": 0,
+      "main_status_id": "2101212782091968944",
+      "reply_status_id": "2101212784663171456",
+      "main_url": "https://x.com/collect24995/status/2101212782091968944",
+      "reply_url": "https://x.com/collect24995/status/2101212784663171456",
+      "posted_at": "2026-09-19 15:32 Asia/Shanghai",
+      "captured_at": "2026-09-19T21:38:10.965720+08:00",
+      "selection": "new_latest",
+      "raw_prompt": "プロンプト(GPT、任意のAI美女を参照画像に)  3:4縦長、引き目の構図、横からの構図、白い壁の方を向いて胸を密着させる、首を傾けてアンニュイな表情でこちらを見る、白い薄手のアウターを前を留めずに軽く羽織る、大事な部分はしっかり隠れる ネガティブ: トップス、ボトムス",
+      "expression_override": true,
+      "note": null
+    },
+    {
+      "id": 1,
+      "main_status_id": "2101140319920373974",
+      "reply_status_id": "2101140322906759396",
+      "main_url": "https://x.com/collect24995/status/2101140319920373974",
+      "reply_url": "https://x.com/collect24995/status/2101140322906759396",
+      "posted_at": "2026-09-19 10:44 Asia/Shanghai",
+      "captured_at": "2026-09-19T22:07:40.664612+08:00",
+      "selection": "backfill_unused",
+      "raw_prompt": "プロンプト(GPT、任意のAI美女を参照画像に)  3:4縦長、腿、肩、肘窩、デコルテ、廊下、洗濯物が入った籠を両手で持って歩いている、カメラ目線ではない、服の代わりに髪と洗濯籠でデコルテ〜腿が隠れる、SFW ネガティブ: トップス",
+      "expression_override": null,
+      "note": "seed from crawler preview; not yet used for image gen"
+    }
+  ]
+}

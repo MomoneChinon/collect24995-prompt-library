@@ -1,0 +1,12 @@
+{
+  "tasks": {
+    "start": "deno run -A https://deno.land/std@0.224.0/http/file_server.ts public --port 8000",
+    "serve": "deno task start",
+    "sync-public": "deno run -A scripts/sync_public.ts",
+    "update": "python3 crawler/update_library.py && deno task sync-public"
+  },
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 100
+  }
+}

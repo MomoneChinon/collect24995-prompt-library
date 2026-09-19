@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>collect24995 Prompt Library</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <h1>@collect24995 提示词库</h1>
+    <div class="meta" id="meta">加载中…</div>
+  </header>
+  <main>
+    <div class="apis">
+      <a href="./data/prompts.json">/data/prompts.json</a>
+      <a href="./data/latest.json">/data/latest.json</a>
+      <a href="./data/index.json">/data/index.json</a>
+      <a href="./data/by-id/0.json">/data/by-id/0.json</a>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th class="hide-sm">发布时间</th>
+          <th>抓取时间</th>
+          <th>提示词</th>
+          <th>链接</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </main>
+  <script>
+    async function load() {
+      const res = await fetch("./data/prompts.json", { cache: "no-store" });
+      const doc = await res.json();
+      const meta = doc.meta || {};
+      document.getElementById("meta").textContent =
+        `共 ${meta.count ?? (doc.prompts || []).length} 条 · ID 范围 ${meta.id_range || "0-9999"} · 更新 ${meta.updated_at || "—"}`;
+      const rows = document.getElementById("rows");
+      const list = (doc.prompts || []).slice().sort((a, b) => b.id - a.id);
+      rows.innerHTML = list.map((p) => {
+        const short = (p.raw_prompt || "").length > 160
+          ? (p.raw_prompt || "").slice(0, 160) + "…"
+          : (p.raw_prompt || "");
+        const full = (p.raw_prompt || "").replace(/</g, "&lt;");
+        return `<tr>
+          <td class="id">${p.id}</td>
+          <td class="time hide-sm">${p.posted_at || "—"}</td>
+          <td class="time">${p.captured_at || "—"}</td>
+          <td class="prompt"><details><summary>${short.replace(/</g, "&lt;")}</summary><pre class="prompt">${full}</pre></details></td>
+          <td class="links">
+            ${p.main_url ? `<a href="${p.main_url}" target="_blank" rel="noopener">主帖</a>` : ""}
+            ${p.reply_url ? `<a href="${p.reply_url}" target="_blank" rel="noopener">提示词</a>` : ""}
+            <a href="./data/by-id/${p.id}.json">JSON</a>
+          </td>
+        </tr>`;
+      }).join("");
+    }
+    load().catch((e) => {
+      document.getElementById("meta").textContent = "加载失败: " + e;
+    });
+  </script>
+</body>
+</html>
